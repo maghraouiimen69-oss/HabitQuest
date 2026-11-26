@@ -39,6 +39,13 @@ public class HabitAdapter extends RecyclerView.Adapter<HabitAdapter.HabitViewHol
         notifyDataSetChanged();
     }
 
+    public Habit getHabit(int position) {
+        if (position < 0 || position >= habits.size()) {
+            return null;
+        }
+        return habits.get(position);
+    }
+
     @NonNull
     @Override
     public HabitViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

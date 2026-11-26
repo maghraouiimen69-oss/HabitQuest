@@ -19,12 +19,22 @@ Built as a university project with **Java + XML + SQLite only**: no backend, no 
   </tr>
   <tr>
     <td><img src="docs/screenshots/habits-dark.png" width="230" alt="Habits"/></td>
+    <td><img src="docs/screenshots/habits-light.png" width="230" alt="Habits light"/></td>
     <td><img src="docs/screenshots/badges-dark.png" width="230" alt="Badges"/></td>
+  </tr>
+  <tr>
+    <td align="center">Habits — swipe a row right to complete it</td>
+    <td align="center">Habits — light</td>
+    <td align="center">Badges</td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/habit-detail-dark.png" width="230" alt="Habit detail dark"/></td>
+    <td><img src="docs/screenshots/habit-detail-light.png" width="230" alt="Habit detail light"/></td>
     <td><img src="docs/screenshots/stats-dark.png" width="230" alt="Statistics"/></td>
   </tr>
   <tr>
-    <td align="center">Habits</td>
-    <td align="center">Badges</td>
+    <td align="center">Habit detail — 30-day calendar</td>
+    <td align="center">Habit detail — light</td>
     <td align="center">Statistics</td>
   </tr>
 </table>
@@ -35,7 +45,9 @@ Built as a university project with **Java + XML + SQLite only**: no backend, no 
 
 - **Accounts** — registration and login with field validation (email format, password length), passwords stored as salted PBKDF2-HMAC-SHA256 hashes, session kept across launches.
 - **Dashboard** — greeting and avatar, level chip, XP progress bar, streak, daily completion, motivational line and today's habit checklist.
-- **Habits** — full create / edit / delete with category and difficulty, one completion per day, XP reward animation and level-up dialog.
+- **Habits** — full create / edit / delete with category and difficulty, one completion per day, XP reward animation and level-up dialog. Completing a habit is one tap on the circle **or a right swipe on the row**.
+- **Habit detail** — tap any habit to open its screen: streak, best streak, total completions, a 30-day completion calendar drawn with a custom `View`, its reminder and a *Mark done today* button.
+- **Reminders** — an optional daily time per habit, picked with a Material time picker and delivered as a notification through `AlarmManager` (exact alarms when allowed, a 5-minute window otherwise). Alarms are re-scheduled after reboot and after an app update.
 - **Progress** — XP by difficulty, ten levels with titles, progress persisted per user.
 - **Badges** — five achievements evaluated from real activity, shown locked or unlocked with the unlock date.
 - **Statistics** — habits completed, XP earned, current and longest streak, weekly completion, seven-day bar chart and top habit.
@@ -106,11 +118,17 @@ app/src/main/java/com/example/habitquest/
 ├── ThemeManager.java          # dark/light preference
 ├── LevelSystem.java           # XP thresholds and level titles
 ├── ProgressManager.java       # XP, streaks and completion rules
+├── HabitStats.java            # streak and weekly maths
+├── ReminderScheduler.java     # daily alarms via AlarmManager
+├── ReminderReceiver.java      # builds the reminder notification
+├── BootReceiver.java          # re-schedules alarms after reboot/update
 ├── JokeApi.java               # JokeAPI client with daily cache
 ├── MainActivity.java          # splash and routing
 ├── LoginActivity.java / RegisterActivity.java
 ├── DashboardActivity.java     # home tab
 ├── HabitsActivity.java / AddHabitActivity.java
+├── HabitDetailActivity.java   # per-habit stats, calendar, reminder
+├── HabitCalendarView.java     # custom 30-day calendar view
 ├── AchievementsActivity.java  # badges tab
 ├── StatisticsActivity.java    # stats tab, WeeklyChartView
 └── ProfileActivity.java       # profile tab
@@ -130,4 +148,4 @@ Or build from the command line:
 ./gradlew assembleDebug
 ```
 
-The installable build is also committed in this repository: **[apk/HabitQuest-debug.apk](apk/HabitQuest-debug.apk)** — download it on an Android phone, allow installation from unknown sources and open it. A new account can be created from the registration screen on first launch.
+The installable build is also committed in this repository: **[apk/HabitQuest-debug.apk](apk/HabitQuest-debug.apk)** — download it on an Android phone, allow installation from unknown sources and open it. A new account can be created from the registration screen on first launch. On Android 13 and newer the app asks for notification permission the first time you set a reminder.

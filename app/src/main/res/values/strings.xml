@@ -165,7 +165,7 @@
     <string name="progress_reset">Progress reset</string>
     <string name="logout_title">Log out?</string>
     <string name="logout_body">You can log back in anytime.</string>
-    <string name="version_label">HabitQuest 1.0 &#183; university project</string>
+    <string name="version_label">HabitQuest 1.1 &#183; university project</string>
 
     <!-- Gamification -->
     <string name="level_up_title">Level up!</string>
