@@ -93,6 +93,31 @@
     <string name="delete">Delete</string>
     <string name="edit">Edit</string>
 
+    <!-- Reminders -->
+    <string name="reminder_channel_name">Habit reminders</string>
+    <string name="reminder_channel_description">Daily nudges so no habit slips by</string>
+    <string name="label_reminder">Reminder</string>
+    <string name="reminder_none">No reminder set</string>
+    <string name="reminder_daily">Every day at %1$s</string>
+    <string name="reminder_change">Change</string>
+    <string name="reminder_add">Add time</string>
+    <string name="reminder_remove">Remove</string>
+    <string name="reminder_permission_denied">Notifications are blocked, so reminders will not appear</string>
+    <string name="reminder_notification_title">Habit time</string>
+    <string name="reminder_body">Don\'t forget: %1$s</string>
+    <string name="time_picker_title">Reminder time</string>
+
+    <!-- Habit detail -->
+    <string name="habit_detail_history">Last 30 days</string>
+    <string name="habit_detail_month">%1$d of the last 30 days</string>
+    <string name="habit_detail_total">Total done</string>
+    <string name="habit_detail_streak">Streak</string>
+    <string name="habit_detail_best">Best streak</string>
+    <string name="habit_detail_this_month">This month</string>
+    <string name="habit_detail_done_today">Done today</string>
+    <string name="habit_detail_mark_today">Mark done today</string>
+    <string name="swipe_to_complete">Swipe right to complete</string>
+
     <!-- Categories -->
     <string name="cat_health">Health</string>
     <string name="cat_fitness">Fitness</string>

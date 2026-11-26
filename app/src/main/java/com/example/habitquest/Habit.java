@@ -20,6 +20,7 @@ public class Habit {
     private String difficulty;
     private int xpReward;
     private String creationDate;
+    private String reminderTime;
     private boolean completedToday;
 
     public Habit() {
@@ -90,6 +91,18 @@ public class Habit {
 
     public void setCreationDate(String creationDate) {
         this.creationDate = creationDate;
+    }
+
+    public String getReminderTime() {
+        return reminderTime;
+    }
+
+    public void setReminderTime(String reminderTime) {
+        this.reminderTime = reminderTime;
+    }
+
+    public boolean hasReminder() {
+        return reminderTime != null && !reminderTime.trim().isEmpty();
     }
 
     public boolean isCompletedToday() {

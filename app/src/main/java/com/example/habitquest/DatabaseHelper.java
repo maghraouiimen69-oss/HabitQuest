@@ -24,7 +24,7 @@ import javax.crypto.spec.PBEKeySpec;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "habitquest.db";
-    private static final int DB_VERSION = 1;
+    private static final int DB_VERSION = 2;
 
     private static final String T_USERS = "users";
     private static final String T_HABITS = "habits";
@@ -78,6 +78,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 + "difficulty TEXT NOT NULL, "
                 + "xp_reward INTEGER NOT NULL, "
                 + "creation_date TEXT NOT NULL, "
+                + "reminder_time TEXT, "
                 + "FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE)");
 
         db.execSQL("CREATE TABLE " + T_HISTORY + " ("
@@ -104,11 +105,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS " + T_HISTORY);
-        db.execSQL("DROP TABLE IF EXISTS " + T_ACHIEVEMENTS);
-        db.execSQL("DROP TABLE IF EXISTS " + T_HABITS);
-        db.execSQL("DROP TABLE IF EXISTS " + T_USERS);
-        onCreate(db);
+        if (oldVersion < 2) {
+            db.execSQL("ALTER TABLE " + T_HABITS + " ADD COLUMN reminder_time TEXT");
+        }
     }
 
     // ---------------------------------------------------------------- users
@@ -188,6 +187,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put("difficulty", habit.getDifficulty());
         values.put("xp_reward", habit.getXpReward());
         values.put("creation_date", HabitStats.today());
+        values.put("reminder_time", habit.getReminderTime());
         return getWritableDatabase().insert(T_HABITS, null, values);
     }
 
@@ -198,6 +198,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put("category", habit.getCategory());
         values.put("difficulty", habit.getDifficulty());
         values.put("xp_reward", habit.getXpReward());
+        values.put("reminder_time", habit.getReminderTime());
         return getWritableDatabase().update(T_HABITS, values, "id = ? AND user_id = ?",
                 new String[]{String.valueOf(habit.getId()), String.valueOf(habit.getUserId())});
     }
@@ -255,6 +256,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         habit.setDifficulty(cursor.getString(cursor.getColumnIndexOrThrow("difficulty")));
         habit.setXpReward(cursor.getInt(cursor.getColumnIndexOrThrow("xp_reward")));
         habit.setCreationDate(cursor.getString(cursor.getColumnIndexOrThrow("creation_date")));
+        habit.setReminderTime(cursor.getString(cursor.getColumnIndexOrThrow("reminder_time")));
         return habit;
     }
 
@@ -298,6 +300,30 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
         }
         return dates;
+    }
+
+    public List<String> getHabitCompletionDates(int habitId) {
+        List<String> dates = new ArrayList<>();
+        try (Cursor cursor = getReadableDatabase().rawQuery(
+                "SELECT completion_date FROM " + T_HISTORY + " WHERE habit_id = ? ORDER BY completion_date ASC",
+                new String[]{String.valueOf(habitId)})) {
+            while (cursor.moveToNext()) {
+                dates.add(cursor.getString(0));
+            }
+        }
+        return dates;
+    }
+
+    public List<Habit> getHabitsWithReminders(int userId) {
+        List<Habit> habits = new ArrayList<>();
+        try (Cursor cursor = getReadableDatabase().rawQuery(
+                "SELECT * FROM " + T_HABITS + " WHERE user_id = ? AND reminder_time IS NOT NULL",
+                new String[]{String.valueOf(userId)})) {
+            while (cursor.moveToNext()) {
+                habits.add(readHabit(cursor));
+            }
+        }
+        return habits;
     }
 
     public Map<String, Integer> getDailyCounts(int userId, String fromDate) {
