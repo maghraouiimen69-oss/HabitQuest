@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Palette extracted from the reference image (7 columns x 4 rows) -->
+    <!-- Row 1: greens to lavender -->
+    <color name="p_forest">#2F4C2E</color>
+    <color name="p_emerald">#2F7445</color>
+    <color name="p_jade">#2C9874</color>
+    <color name="p_teal">#2DB3B4</color>
+    <color name="p_sky">#51A3CB</color>
+    <color name="p_periwinkle">#7FA0E5</color>
+    <color name="p_lavender">#AAAAF0</color>
+
+    <!-- Row 2 -->
+    <color name="p_pine">#2E4D45</color>
+    <color name="p_lagoon">#2E6D74</color>
+    <color name="p_ocean">#2E6D99</color>
+    <color name="p_cobalt">#2C4EB2</color>
+    <color name="p_indigo">#5D52CC</color>
+    <color name="p_violet">#A97FE5</color>
+    <color name="p_orchid">#E4ABF2</color>
+
+    <!-- Row 3 -->
+    <color name="p_slate">#2E3E4E</color>
+    <color name="p_navy">#2F3974</color>
+    <color name="p_royal">#3F2D99</color>
+    <color name="p_purple">#702CB3</color>
+    <color name="p_magenta">#B853CB</color>
+    <color name="p_fuchsia">#E57FD5</color>
+    <color name="p_blush">#F2AACF</color>
+
+    <!-- Row 4 -->
+    <color name="p_ink">#352E4F</color>
+    <color name="p_plum">#572E74</color>
+    <color name="p_grape">#902E9B</color>
+    <color name="p_raspberry">#B42D93</color>
+    <color name="p_rose">#CD5185</color>
+    <color name="p_coral">#E67E89</color>
+    <color name="p_peach">#F4BDA9</color>
+
+    <!-- Derived neutrals (light theme; dark values in values-night) -->
+    <color name="bg">#F6F4FD</color>
+    <color name="bg_deep">#FFFFFF</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="surface_alt">#F3EFFC</color>
+    <color name="surface_soft">#FFFFFF</color>
+    <color name="field_bg">#F7F5FD</color>
+    <color name="text_primary">#1E1B2E</color>
+    <color name="text_secondary">#565073</color>
+    <color name="text_muted">#7C7699</color>
+    <color name="white">#FFFFFF</color>
+
+    <!-- Semantic accents (deeper palette tones for light surfaces) -->
+    <color name="accent_primary">@color/p_indigo</color>
+    <color name="accent_mint">@color/p_jade</color>
+    <color name="accent_sky">@color/p_ocean</color>
+    <color name="accent_pink">@color/p_magenta</color>
+    <color name="accent_peach">@color/p_rose</color>
+    <color name="accent_violet">@color/p_purple</color>
+    <color name="accent_rose">@color/p_raspberry</color>
+    <color name="success">@color/p_jade</color>
+    <color name="danger">@color/p_raspberry</color>
+    <color name="on_primary">#16131F</color>
+
+    <!-- Translucent layers -->
+    <color name="stroke_soft">#1F6B5FA8</color>
+    <color name="stroke_strong">#596B5FA8</color>
+    <color name="overlay_white">#26FFFFFF</color>
+    <color name="overlay_dark">#4D000000</color>
+    <color name="nav_indicator">#2E7FA0E5</color>
+    <color name="nav_bar">#FFFFFF</color>
+    <color name="screen_top">#FBF9FE</color>
+    <color name="screen_bottom">#ECE7F8</color>
+    <color name="track_soft">#1F2E3E4E</color>
+    <color name="circle_soft">#1A702CB3</color>
+    <color name="pill_soft">#EFEAFB</color>
+    <color name="tint_teal">#2E2DB3B4</color>
+    <color name="tint_peach">#33E67E89</color>
+    <color name="tint_lavender">#2E7FA0E5</color>
+    <color name="tint_rose">#33B42D93</color>
+    <color name="tint_pink">#33B853CB</color>
+    <color name="xp_track">#332C4EB2</color>
+
+    <!-- Categories -->
+    <color name="cat_health">@color/p_lagoon</color>
+    <color name="cat_fitness">@color/p_emerald</color>
+    <color name="cat_education">@color/p_cobalt</color>
+    <color name="cat_productivity">@color/p_grape</color>
+    <color name="cat_personal">@color/p_raspberry</color>
+
+    <!-- Difficulty -->
+    <color name="diff_easy">@color/p_lagoon</color>
+    <color name="diff_medium">@color/p_indigo</color>
+    <color name="diff_hard">@color/p_rose</color>
+</resources>

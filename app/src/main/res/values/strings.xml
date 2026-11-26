@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">HabitQuest</string>
+
+    <!-- Bottom navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_habits">Habits</string>
+    <string name="nav_badges">Badges</string>
+    <string name="nav_stats">Stats</string>
+    <string name="nav_profile">Profile</string>
+    <string name="tagline">Level up your daily routine</string>
+    <string name="splash_loading">Preparing your quest</string>
+
+    <!-- Auth -->
+    <string name="login_title">Welcome back</string>
+    <string name="login_subtitle">Log in to continue your quest</string>
+    <string name="hint_username_or_email">Username or email</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_confirm_password">Confirm password</string>
+    <string name="login_button">Log in</string>
+    <string name="no_account">New here? Create an account</string>
+    <string name="register_title">Create your account</string>
+    <string name="register_subtitle">Your adventure starts with one habit</string>
+    <string name="register_button">Create account</string>
+    <string name="have_account">Already have an account? Log in</string>
+
+    <!-- Errors -->
+    <string name="err_fill_all">Please fill in all fields</string>
+    <string name="err_username_short">Username must be at least 3 characters</string>
+    <string name="err_email_invalid">Please enter a valid email address</string>
+    <string name="err_password_short">Password must be at least 6 characters</string>
+    <string name="err_password_match">Passwords do not match</string>
+    <string name="err_username_taken">This username is already taken</string>
+    <string name="err_email_taken">This email is already registered</string>
+    <string name="err_login">Invalid username or password</string>
+    <string name="err_register">Could not create the account</string>
+    <string name="success_register">Account created. Welcome to HabitQuest!</string>
+    <string name="success_habit_saved">Habit saved</string>
+    <string name="already_done">Already completed today</string>
+    <string name="habit_deleted">Habit deleted</string>
+
+    <!-- Dashboard -->
+    <string name="greeting_morning">Good morning, %1$s</string>
+    <string name="greeting_afternoon">Good afternoon, %1$s</string>
+    <string name="greeting_evening">Good evening, %1$s</string>
+    <string name="level_chip">Level %1$d &#183; %2$s</string>
+    <string name="xp_progress">%1$d / %2$d XP</string>
+    <string name="xp_total">%1$d XP total</string>
+    <string name="streak_days">%1$d day streak</string>
+    <string name="streak_days_plural">%1$d days streak</string>
+    <string name="streak_none">No streak yet</string>
+    <string name="today_title">Today</string>
+    <string name="today_progress">%1$d of %2$d habits done</string>
+    <string name="todays_habits">Your habits today</string>
+    <string name="see_all">See all</string>
+    <string name="no_habits_yet">No habits yet</string>
+    <string name="no_habits_body">Tap + to create your first habit and start earning XP.</string>
+    <string name="motivation_empty">Every legend starts with a single habit. Add one now.</string>
+    <string name="motivation_start">Good start. Keep the momentum going.</string>
+    <string name="motivation_almost">Almost there. One more push.</string>
+    <string name="motivation_done">All habits complete. You crushed today.</string>
+
+    <!-- Joke of the day (free joke API) -->
+    <string name="joke_title">Joke of the day</string>
+    <string name="joke_source">Live joke &#183; JokeAPI</string>
+    <string name="joke_loading">Warming up a joke&#8230;</string>
+    <string name="joke_error">Couldn\'t reach the joke service. Tap the refresh icon to retry.</string>
+    <string name="laugh">Laugh</string>
+    <string name="new_joke">New joke</string>
+
+    <!-- Habits -->
+    <string name="habits_title">Your habits</string>
+    <string name="habits_active">%1$d active</string>
+    <string name="habit_xp_reward">+%1$d XP</string>
+    <string name="habit_meta">%1$s &#183; %2$s</string>
+    <string name="add_habit">Add habit</string>
+    <string name="new_habit">New habit</string>
+    <string name="edit_habit">Edit habit</string>
+    <string name="hint_habit_name">Habit name</string>
+    <string name="hint_habit_description">Description (optional)</string>
+    <string name="label_category">Category</string>
+    <string name="label_difficulty">Difficulty</string>
+    <string name="label_reward">Reward</string>
+    <string name="reward_value">%1$d XP per completion</string>
+    <string name="save_habit">Save habit</string>
+    <string name="update_habit">Update habit</string>
+    <string name="err_habit_name">Please give your habit a name</string>
+    <string name="delete_habit_title">Delete this habit?</string>
+    <string name="delete_habit_body">Its completion history will be removed too. This cannot be undone.</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+
+    <!-- Categories -->
+    <string name="cat_health">Health</string>
+    <string name="cat_fitness">Fitness</string>
+    <string name="cat_education">Education</string>
+    <string name="cat_productivity">Productivity</string>
+    <string name="cat_personal">Personal Dev.</string>
+
+    <!-- Difficulty -->
+    <string name="diff_easy">Easy</string>
+    <string name="diff_medium">Medium</string>
+    <string name="diff_hard">Hard</string>
+
+    <!-- Achievements -->
+    <string name="achievements_title">Achievements</string>
+    <string name="achievements_progress">%1$d of %2$d unlocked</string>
+    <string name="locked">Locked</string>
+    <string name="unlocked_on">Unlocked on %1$s</string>
+
+    <!-- Statistics -->
+    <string name="stats_title">Statistics</string>
+    <string name="stat_completed">Habits completed</string>
+    <string name="stat_xp">XP earned</string>
+    <string name="stat_current_streak">Current streak</string>
+    <string name="stat_longest_streak">Longest streak</string>
+    <string name="stat_weekly">Weekly activity</string>
+    <string name="stat_weekly_completion">Weekly completion</string>
+    <string name="stat_top_habit">Top habit</string>
+    <string name="days_value">%1$d d</string>
+    <string name="no_data_yet">Not enough data yet</string>
+
+    <!-- Profile -->
+    <string name="profile_title">Your profile</string>
+    <string name="member_since">Member since %1$s</string>
+    <string name="profile_achievements">Achievements</string>
+    <string name="profile_badges">Badges</string>
+    <string name="light_mode">Light mode</string>
+    <string name="profile_level">Level</string>
+    <string name="profile_xp">Total XP</string>
+    <string name="profile_habits">Habits</string>
+    <string name="change_avatar">Change avatar</string>
+    <string name="reset_progress">Reset progress</string>
+    <string name="reset_progress_title">Reset all progress?</string>
+    <string name="reset_progress_body">XP, history and achievements will be cleared. Your habits stay.</string>
+    <string name="logout">Log out</string>
+    <string name="progress_reset">Progress reset</string>
+    <string name="logout_title">Log out?</string>
+    <string name="logout_body">You can log back in anytime.</string>
+    <string name="version_label">HabitQuest 1.0 &#183; university project</string>
+
+    <!-- Gamification -->
+    <string name="level_up_title">Level up!</string>
+    <string name="level_up_body">You reached Level %1$d &#8212; %2$s</string>
+    <string name="continue_label">Keep going</string>
+    <string name="xp_gained">+%1$d XP</string>
+    <string name="achievement_unlocked">Achievement unlocked: %1$s</string>
+    <string name="back">Back</string>
+</resources>
