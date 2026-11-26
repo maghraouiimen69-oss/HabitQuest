@@ -49,6 +49,10 @@
             android:windowSoftInputMode="adjustResize" />
 
         <activity
+            android:name=".HabitDetailActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".AchievementsActivity"
             android:exported="false" />
 
