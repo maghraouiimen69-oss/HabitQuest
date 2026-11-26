@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark theme neutrals (light counterparts live in values/colors.xml) -->
+    <color name="bg">#1E1A2E</color>
+    <color name="bg_deep">#16131F</color>
+    <color name="surface">#2E3E4E</color>
+    <color name="surface_alt">#352E4F</color>
+    <color name="surface_soft">#26223A</color>
+    <color name="field_bg">#26223A</color>
+    <color name="text_primary">#F4F2FB</color>
+    <color name="text_secondary">#B7B2D4</color>
+    <color name="text_muted">#8A85A8</color>
+
+    <!-- Accents stay bright against the dark background -->
+    <color name="accent_primary">@color/p_lavender</color>
+    <color name="accent_mint">@color/p_teal</color>
+    <color name="accent_sky">@color/p_sky</color>
+    <color name="accent_pink">@color/p_fuchsia</color>
+    <color name="accent_peach">@color/p_peach</color>
+    <color name="accent_violet">@color/p_violet</color>
+    <color name="accent_rose">@color/p_rose</color>
+    <color name="danger">@color/p_coral</color>
+
+    <!-- Translucent layers -->
+    <color name="stroke_soft">#33AAAAF0</color>
+    <color name="stroke_strong">#66AAAAF0</color>
+    <color name="nav_indicator">#33AAAAF0</color>
+    <color name="nav_bar">#16131F</color>
+    <color name="screen_top">#241F3A</color>
+    <color name="screen_bottom">#171425</color>
+    <color name="track_soft">#26FFFFFF</color>
+    <color name="circle_soft">#26FFFFFF</color>
+    <color name="pill_soft">#26FFFFFF</color>
+    <color name="tint_teal">#262DB3B4</color>
+    <color name="tint_peach">#26F4BDA9</color>
+    <color name="tint_lavender">#26AAAAF0</color>
+    <color name="tint_rose">#26E67E89</color>
+    <color name="tint_pink">#26E57FD5</color>
+    <color name="xp_track">#402C4EB2</color>
+
+    <!-- Categories -->
+    <color name="cat_health">@color/p_teal</color>
+    <color name="cat_fitness">@color/p_jade</color>
+    <color name="cat_education">@color/p_indigo</color>
+    <color name="cat_productivity">@color/p_magenta</color>
+    <color name="cat_personal">@color/p_rose</color>
+
+    <!-- Difficulty -->
+    <color name="diff_easy">@color/p_teal</color>
+    <color name="diff_medium">@color/p_violet</color>
+    <color name="diff_hard">@color/p_coral</color>
+</resources>
