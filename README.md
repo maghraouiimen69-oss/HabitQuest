@@ -33,7 +33,7 @@ Built as a university project with **Java + XML + SQLite only**: no backend, no 
 
 ## Features
 
-- **Accounts** — registration and login with field validation (email format, password length), passwords stored as SHA-256 hashes, session kept across launches.
+- **Accounts** — registration and login with field validation (email format, password length), passwords stored as salted PBKDF2-HMAC-SHA256 hashes, session kept across launches.
 - **Dashboard** — greeting and avatar, level chip, XP progress bar, streak, daily completion, motivational line and today's habit checklist.
 - **Habits** — full create / edit / delete with category and difficulty, one completion per day, XP reward animation and level-up dialog.
 - **Progress** — XP by difficulty, ten levels with titles, progress persisted per user.
@@ -116,7 +116,7 @@ app/src/main/java/com/example/habitquest/
 └── ProfileActivity.java       # profile tab
 ```
 
-The database has four tables: `users`, `habits`, `habit_logs` (one row per completed habit per day) and `achievements`.
+The database has four tables: `users`, `habits`, `habit_history` (one row per completed habit per day, unique on habit + date) and `achievements`. Foreign keys cascade on delete, and passwords are hashed with PBKDF2 (30,000 iterations, per-user salt).
 
 ## Build and run
 
